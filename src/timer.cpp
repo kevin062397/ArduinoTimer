@@ -9,7 +9,7 @@
 
 #include "timer.h"
 
-Timer::Timer(unsigned long intervalMs, void (*callback)(), bool repeat = false) : _intervalMs(intervalMs), _running(false), _repeat(repeat), _callback(callback) {}
+Timer::Timer(unsigned long intervalMillis, void (*callback)(), bool repeat = false) : _intervalMillis(intervalMillis), _running(false), _repeat(repeat), _callback(callback) {}
 
 Timer::~Timer() {}
 
@@ -29,7 +29,7 @@ void Timer::update()
 	if (_running)
 	{
 		unsigned long currentMillis = millis();
-		if (currentMillis - _previousMillis >= _intervalMs)
+		if (currentMillis - _previousMillis >= _intervalMillis)
 		{
 			_previousMillis = currentMillis;
 			trigger();
@@ -41,9 +41,9 @@ void Timer::update()
 	}
 }
 
-void Timer::setInterval(unsigned long intervalMs)
+void Timer::setInterval(unsigned long intervalMillis)
 {
-	_intervalMs = intervalMs;
+	_intervalMillis = intervalMillis;
 }
 
 bool Timer::isRunning()
@@ -57,13 +57,13 @@ unsigned long Timer::getRemainingTime()
 	{
 		unsigned long currentMillis = millis();
 		unsigned long elapsedTime = currentMillis - _previousMillis;
-		if (elapsedTime >= _intervalMs)
+		if (elapsedTime >= _intervalMillis)
 		{
 			return 0; // Timer has elapsed, remaining time is 0
 		}
 		else
 		{
-			return _intervalMs - elapsedTime; // Remaining time until the next invocation
+			return _intervalMillis - elapsedTime; // Remaining time until the next invocation
 		}
 	}
 	else

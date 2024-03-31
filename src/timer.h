@@ -12,7 +12,7 @@ class Timer
 {
 private:
 	unsigned long _previousMillis; // Store the previous millis value
-	unsigned long _intervalMs;	   // Interval for triggering the timer
+	unsigned long _intervalMillis; // Interval for triggering the timer
 	bool _running;				   // Flag to indicate whether the timer is running
 	bool _repeat;				   // Flag to indicate whether the timer should repeat
 	void (*_callback)();		   // Function pointer to the callback function
@@ -21,11 +21,11 @@ public:
 	/**
 	 * Constructor for the Timer class.
 	 *
-	 * @param intervalMs The interval (in milliseconds) at which the timer should trigger.
+	 * @param intervalMillis The interval (in milliseconds) at which the timer should trigger.
 	 * @param callback   The function pointer to the callback function that will be called when the timer triggers.
 	 * @param repeat     Whether the timer should trigger repeatedly (true) or just once (false). Default is false.
 	 */
-	Timer(unsigned long intervalMs, void (*callback)(), bool repeat = false);
+	Timer(unsigned long intervalMillis, void (*callback)(), bool repeat = false);
 
 	/**
 	 * Destructor for the Timer class.
@@ -51,9 +51,9 @@ public:
 	/**
 	 * Set a new interval for the timer.
 	 *
-	 * @param intervalMs The new interval (in milliseconds) at which the timer should trigger.
+	 * @param intervalMillis The new interval (in milliseconds) at which the timer should trigger.
 	 */
-	void setInterval(unsigned long intervalMs);
+	void setInterval(unsigned long intervalMillis);
 
 	/**
 	 * Check if the timer is running.
