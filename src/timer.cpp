@@ -41,6 +41,11 @@ void Timer::update()
 	}
 }
 
+void Timer::setInterval(unsigned long intervalMs)
+{
+	_intervalMs = intervalMs;
+}
+
 void Timer::trigger()
 {
 	if (_callback != NULL)

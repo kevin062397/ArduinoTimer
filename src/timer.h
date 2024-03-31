@@ -48,6 +48,13 @@ public:
 	 */
 	void update();
 
+	/**
+	 * Set a new interval for the timer.
+	 *
+	 * @param intervalMs The new interval (in milliseconds) at which the timer should trigger.
+	 */
+	void setInterval(unsigned long intervalMs);
+
 private:
 	/**
 	 * Trigger the timer callback function.
