@@ -11,6 +11,7 @@ start           KEYWORD2
 stop            KEYWORD2
 update          KEYWORD2
 setInterval     KEYWORD2
+isRunning       KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

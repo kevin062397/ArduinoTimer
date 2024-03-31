@@ -46,6 +46,11 @@ void Timer::setInterval(unsigned long intervalMs)
 	_intervalMs = intervalMs;
 }
 
+bool Timer::isRunning()
+{
+	return _running;
+}
+
 void Timer::trigger()
 {
 	if (_callback != NULL)

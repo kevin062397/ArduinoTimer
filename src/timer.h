@@ -55,6 +55,13 @@ public:
 	 */
 	void setInterval(unsigned long intervalMs);
 
+	/**
+	 * Check if the timer is running.
+	 *
+	 * @return True if the timer is running, false otherwise.
+	 */
+	bool isRunning();
+
 private:
 	/**
 	 * Trigger the timer callback function.
