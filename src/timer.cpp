@@ -51,6 +51,27 @@ bool Timer::isRunning()
 	return _running;
 }
 
+unsigned long Timer::getRemainingTime()
+{
+	if (_running)
+	{
+		unsigned long currentMillis = millis();
+		unsigned long elapsedTime = currentMillis - _previousMillis;
+		if (elapsedTime >= _intervalMs)
+		{
+			return 0; // Timer has elapsed, remaining time is 0
+		}
+		else
+		{
+			return _intervalMs - elapsedTime; // Remaining time until the next invocation
+		}
+	}
+	else
+	{
+		return 0; // Timer is not running, remaining time is 0
+	}
+}
+
 void Timer::trigger()
 {
 	if (_callback != NULL)

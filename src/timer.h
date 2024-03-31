@@ -62,6 +62,13 @@ public:
 	 */
 	bool isRunning();
 
+	/**
+	 * Get the remaining time until the next invocation of the timer.
+	 *
+	 * @return The remaining time (in milliseconds).
+	 */
+	unsigned long getRemainingTime();
+
 private:
 	/**
 	 * Trigger the timer callback function.
