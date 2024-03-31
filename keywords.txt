@@ -1,0 +1,17 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+ArduinoTimer    KEYWORD1
+Timer           KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+start           KEYWORD2
+stop            KEYWORD2
+update          KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+# EXAMPLE       LITERAL1
