@@ -9,7 +9,7 @@
 
 #include "timer.h"
 
-Timer::Timer(unsigned long intervalMillis, void (*callback)(), bool repeat = false) : _intervalMillis(intervalMillis), _running(false), _repeat(repeat), _callback(callback) {}
+Timer::Timer(unsigned long intervalMillis, void (*callback)(), bool repeat) : _intervalMillis(intervalMillis), _running(false), _repeat(repeat), _callback(callback) {}
 
 Timer::~Timer() {}
 
